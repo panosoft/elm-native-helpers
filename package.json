@@ -1,7 +1,7 @@
 {
   "name": "elm-native-helpers",
-  "version": "0.1.0",
-  "description": "Helper functions for developing Native Elm modules",
+  "version": "0.1.2",
+  "description": "Helper functions for developing Native Elm code",
   "main": "cmd.js",
   "scripts": {
       "patch": "npm version patch && git push --follow-tags && npm publish",
