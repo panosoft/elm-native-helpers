@@ -1,0 +1,11 @@
+{
+  "name": "elm-native-helpers",
+  "version": "0.1.0",
+  "description": "Helper functions for developing Native Elm modules",
+  "main": "cmd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Charles Scalfani",
+  "license": "Unlicense"
+}
