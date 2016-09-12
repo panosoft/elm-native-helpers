@@ -3,6 +3,9 @@
 // It must have at least the following:
 //
 // const E = {
+//  A2: A2,
+//  A3: A3,
+//  A4: A4,
 // 	Scheduler: {
 // 		nativeBinding: _elm_lang$core$Native_Scheduler.nativeBinding,
 // 		succeed:  _elm_lang$core$Native_Scheduler.succeed,
