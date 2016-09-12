@@ -1,6 +1,6 @@
 {
   "name": "@panosoft/elm-native-helpers",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Helper functions for developing Native Elm code",
   "main": "cmd.js",
   "scripts": {
