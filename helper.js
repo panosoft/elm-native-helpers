@@ -45,17 +45,17 @@ module.exports = E => {
 	const postProcess = def => args => args.map((arg, index) => (def[index] || id)(arg));
 	const postProcessNop = id;
 	const append = (arr, item) => (arr[arr.length] = item, arr);
-	const call1_1 = (f, postProcess) => (settings, p1) => {
-		postProcess = postProcess || postProcessNop;
-		return callHelper(callback => {
-			f(p1, (err, result1) => callBack1(settings, err, postProcess(result1)));
-			callback(E.Scheduler.succeed(null));
-		});
-	};
 	const call1_0 = (f, unwrapper) => (settings, p1) => {
 		unwrapper = unwrapper || unwrapNop;
 		return callHelper(callback => {
 			f.apply(null, append(unwrapper(0, [p1]), err => callBack0(settings, err)));
+			callback(E.Scheduler.succeed(null));
+		});
+	};
+	const call1_1 = (f, postProcess) => (settings, p1) => {
+		postProcess = postProcess || postProcessNop;
+		return callHelper(callback => {
+			f(p1, (err, result1) => callBack1(settings, err, postProcess(result1)));
 			callback(E.Scheduler.succeed(null));
 		});
 	};
@@ -159,6 +159,7 @@ module.exports = E => {
 	return {
 		unwrap,
 		call1_0,
+		call1_1,
 		call2_0,
 		call2_1,
 		call3_0,
