@@ -98,6 +98,13 @@ module.exports = E => {
 			callback(E.Scheduler.succeed(null));
 		});
 	};
+	const call4_0_opts = (f, unwrap, names) => (settings, p1, p2, p3, p4) => {
+		const args = [p1, p2, p3, p4];
+		return callHelper(callback => {
+			f.apply(null, unwrap(names.length, buildArgs(args, names, err => callBack0(settings, err))));
+			callback(E.Scheduler.succeed(null));
+		});
+	};
 	const call4_1 = (f, unwrapper, postProcess) => (settings, p1, p2, p3, p4) => {
 		unwrapper = unwrapper || unwrapNop;
 		postProcess = postProcess || postProcessNop;
@@ -165,6 +172,7 @@ module.exports = E => {
 		call3_0,
 		call3_1,
 		call3_2,
+		call4_0,
 		call4_1,
 		call4_2,
 		call5_1,
