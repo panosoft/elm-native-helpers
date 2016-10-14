@@ -98,10 +98,10 @@ module.exports = E => {
 			callback(E.Scheduler.succeed(null));
 		});
 	};
-	const call4_0_opts = (f, unwrap, names) => (settings, p1, p2, p3, p4) => {
-		const args = [p1, p2, p3, p4];
+	const call4_0 = (f, unwrapper) => (settings, p1, p2, p3, p4) => {
+		unwrapper = unwrapper || unwrapNop;
 		return callHelper(callback => {
-			f.apply(null, unwrap(names.length, buildArgs(args, names, err => callBack0(settings, err))));
+			f.apply(null, append(unwrapper(0, [p1, p2, p3, p4]), err => callBack0(settings, err)));
 			callback(E.Scheduler.succeed(null));
 		});
 	};
