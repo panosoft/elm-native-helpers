@@ -52,10 +52,11 @@ module.exports = E => {
 			callback(E.Scheduler.succeed(null));
 		});
 	};
-	const call1_1 = (f, postProcess) => (settings, p1) => {
+	const call1_1 = (f, unwrapper, postProcess) => (settings, p1) => {
+		unwrapper = unwrapper || unwrapNop;
 		postProcess = postProcess || postProcessNop;
 		return callHelper(callback => {
-			f(p1, (err, result1) => callBack1(settings, err, postProcess(result1)));
+			f.apply(null, append(unwrapper(0, [p1]), (err, result1) => callBack1(settings, err, postProcess(result1))));
 			callback(E.Scheduler.succeed(null));
 		});
 	};
