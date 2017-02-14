@@ -29,8 +29,3 @@ const helper = require('@panosoft/elm-native-helpers/helper')(E);
 Normally, Elm code is all in the global space. But when run in Node, the Elm code gets brought in via the `require` function. This creates a ***private*** scope for Elm.
 
 Since this package calls some Elm global functions, we need to pass them in from our Native code. That's why `E` is passed in.
-
-
-## Warning
-
-This library is still in alpha.
